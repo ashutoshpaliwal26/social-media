@@ -52,7 +52,7 @@ const Navbar = () => {
         }
     ]
     return (
-        <div className='fixed flex flex-col p-4 w-60'>
+        <div className='flex flex-col p-4 w-60 h-screen border-r border-gray-300'>
             <div className='flex items-center w-full h-20 justify-center pr-8'>
                 <img src='https://res.cloudinary.com/djfi9rtlx/image/upload/v1716572847/instagram/ofmdidm7oqfonidhro7q.png' width={130} className='hover: cursor-pointer' />
             </div>

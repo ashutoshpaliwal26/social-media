@@ -1,9 +1,12 @@
-import Navbar from '@/components/common/navbar'
+import Main from '@/components/common/main' 
 import React from 'react'
 
 const page = () => {
   return (
-    <Navbar/>
+    <div className='ml-60'>
+      <Main/>
+
+    </div>
   )
 }
 
