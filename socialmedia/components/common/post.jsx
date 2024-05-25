@@ -7,25 +7,25 @@ const Post = ({username, name , caption , imageurl , profileurl , likes}) => {
             <div className='flex items-center justify-between p-3 h-20 w-ful'>
                 <div className='flex justify-start items-center'>
                     {/* proflie */}
-                    <div className='w-14 h-14  rounded-full hover:cursor-pointer'>
+                    <div className='w-10 h-10  rounded-full hover:cursor-pointer'>
                         <img src={profileurl} className='h-full w-full object-cover rounded-full' />
 
                     </div>
 
                     <div className='flex flex-col pl-4 hover: cursor-pointer'>
                         <div>
-                            <p className='font-bold text-xl'>{username}</p>
+                            <p className='font-bold text-xl md:text-xs'>{username}</p>
                         </div>
                         <div>
-                            <p className='text-xl'>{name}</p>
+                            <p className='text-xl md:text-xs'>{name}</p>
                         </div>
                     </div>
-                    <div className='pl-4 font-extrabold'>
+                    <div className='pl-4 font-extrabold md:text-xs'>
                         <li>3d</li>
                     </div>
 
                 </div>
-                <div className='w-10 h-10 hover:cursor-pointer'>
+                <div className='w-10 h-10 md:w-6 md:h-6 hover:cursor-pointer'>
                     <img src='https://res.cloudinary.com/djfi9rtlx/image/upload/v1716587706/instagram/nqszha1hlo9jowdoyrmo.png' className='h-full w-full object-cover' />
                 </div>
             </div>
@@ -59,7 +59,7 @@ const Post = ({username, name , caption , imageurl , profileurl , likes}) => {
                 <div className=' w-4 h-4  rounded-full'>
                     <img src='https://freephotocourse.com/uploads/3/4/0/2/34026443/7776791.jpg?446' className='h-full w-full object-cover rounded-full' />
                 </div>
-                <div className='flex font-bold pl-2'>
+                <div className='flex font-bold pl-2 md:text-xs'>
                     <p>{likes} Likes</p>
                 </div>
             </div>
@@ -68,9 +68,9 @@ const Post = ({username, name , caption , imageurl , profileurl , likes}) => {
 
             {/* Caption and Comment Input  */}
             <div className='pl-3'>
-                <p className='font-normal pt-1'>{caption}</p>
-                <p className='font-light pt-1'>View all 10 Comment</p>
-                <input className='pt-1 text-xl border-none select-none' type='text' placeholder='Add Comment'/>
+                <p className='font-normal pt-1 md:text-xs'>{caption}</p>
+                <p className='font-light pt-1 md:text-xs'>View all 10 Comment</p>
+                <input className='pt-1 text-xl md:text-xs border-none select-none' type='text' placeholder='Add Comment'/>
             </div>
             <hr/>
         </div>

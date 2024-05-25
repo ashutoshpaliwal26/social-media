@@ -52,9 +52,17 @@ const Navbar = () => {
         }
     ]
     return (
-        <div className='flex flex-col p-4 w-60 h-screen border-r border-gray-300'>
-            <div className='flex items-center w-full h-20 justify-center pr-8'>
-                <img src='https://res.cloudinary.com/djfi9rtlx/image/upload/v1716572847/instagram/ofmdidm7oqfonidhro7q.png' width={130} className='hover: cursor-pointer' />
+        <div className='flex flex-col p-4 w-60 h-screen border-r border-gray-300 md:w-fit'>
+            <div className='flex items-center w-full h-20 justify-start lg:pr-8 pr-0'>
+                <div className='block md:hidden'>
+                    {/* Instgarm icon */}
+                    <img src='https://res.cloudinary.com/djfi9rtlx/image/upload/v1716580773/instagram/cyjly3ec0i5ufcuyvp8m.png' className='w-10 ml-4'/>
+                </div>
+                <div className='hidden md:block'>
+                    {/* Instagram title logo  */}
+                    <img src='https://res.cloudinary.com/djfi9rtlx/image/upload/v1716572847/instagram/ofmdidm7oqfonidhro7q.png' width={130} className='hover: cursor-pointer' />
+
+                </div>
             </div>
             {navItem.map((ele) => {
                 
@@ -68,7 +76,7 @@ const Navbar = () => {
                             {/* Home Logo */}
                             <img src={ele.logo} className='w-10 rounded-full' />
                         </div>
-                        <div className='pl-4 flex items-center text-xl from-neutral-300'>
+                        <div className=' flex items-center text-xl  from-neutral-300  w-full'>
                             <p>{ele.title}</p>
                         </div>
                     </div>

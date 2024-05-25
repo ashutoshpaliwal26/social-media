@@ -1,9 +1,27 @@
 'use client';
-import Image from 'next/image';
+import axios from 'axios';
 import Link from 'next/link';
-import React from 'react'
+import React, { useState } from 'react'
 
 const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handelSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const data = { email, password };
+            const responce = await axios.post('/api/login', JSON.parse(data));
+            console.log(responce.data);
+        }
+        catch (err) {
+            console.log(err);
+        }
+        setEmail('');
+        setPassword('');
+    }
+
+
     return (
         <div className='flex justify-center grid-rows-2 '>
             <div className=''>
@@ -14,18 +32,21 @@ const Login = () => {
                 <div className='w-full border border-gray-300 pb-3'>
                     <div className="flex justify-center w-full h-40 items-center">
                         {/* Instagram Logo */}
-                        <img src='https://res.cloudinary.com/djfi9rtlx/image/upload/v1716572847/instagram/ofmdidm7oqfonidhro7q.png' width={175} className='hover: cursor-pointer'/>
+                        <img src='https://res.cloudinary.com/djfi9rtlx/image/upload/v1716572847/instagram/ofmdidm7oqfonidhro7q.png' width={175} className='hover: cursor-pointer' />
                     </div>
-                    <div className="flex justify-center w-full h-10 text-xs ">
-                        
-                        <input className='w-60 h-8 p-2 font-light rounded-sm border border-gray-300' type='email' placeholder='Email, username , phone no' />
-                    </div>
-                    <div className="flex justify-center w-full h-10 font-light text-xs">
-                        <input className='w-60 h-8 p-2 font-light rounded-sm border border-gray-300' type='password' placeholder='Password' />
-                    </div>
-                    <div className="flex justify-center w-full h-10 pt-2">
-                        <button className='w-60 h-8 bg-sky-500 rounded-md text-white text-xs font-extrabold' type='submit'>Log in</button>
-                    </div>
+                    <form onSubmit={handelSubmit}>
+                        <div className="flex justify-center w-full h-10 text-xs ">
+
+                            <input className='w-60 h-8 p-2 font-light rounded-sm border border-gray-300' type='email' placeholder='Email, username , phone no' name='email' value={email} onChange={(e) => { setEmail(e.target.value) }} />
+                        </div>
+                        <div className="flex justify-center w-full h-10 font-light text-xs">
+                            <input className='w-60 h-8 p-2 font-light rounded-sm border border-gray-300' type='password' placeholder='Password' name='password' value={password} onChange={(e) => { setPassword(e.target.password) }} />
+                        </div>
+                        <div className="flex justify-center w-full h-10 pt-2">
+                            <button className='w-60 h-8 bg-sky-500 rounded-md text-white text-xs font-extrabold' type='submit'>Log in</button>
+                        </div>
+
+                    </form>
                     <div className="flex justify-center w-full items-center h-10">
                         {/* Or and Hr tag */}
                         <img src='https://res.cloudinary.com/djfi9rtlx/image/upload/v1716572847/instagram/ub9gqiarhrudiqeqlmc2.png' className='w-60 h-4' />
@@ -46,9 +67,9 @@ const Login = () => {
                 </div>
                 <div className='flex justify-center'>
                     {/* Google Play  */}
-                    <img src='https://res.cloudinary.com/djfi9rtlx/image/upload/v1716572847/instagram/whovlhz5wu0cjf6mlcga.png' className='hover:cursor-pointer'/>
+                    <img src='https://res.cloudinary.com/djfi9rtlx/image/upload/v1716572847/instagram/whovlhz5wu0cjf6mlcga.png' className='hover:cursor-pointer' />
                     {/* Microsoft Store */}
-                    <img src='https://res.cloudinary.com/djfi9rtlx/image/upload/v1716572847/instagram/vj4nudifpnpmxbhygwmk.png' className='hover:cursor-pointer'/>
+                    <img src='https://res.cloudinary.com/djfi9rtlx/image/upload/v1716572847/instagram/vj4nudifpnpmxbhygwmk.png' className='hover:cursor-pointer' />
                 </div>
             </div>
         </div>
